@@ -18,3 +18,12 @@ class Bus:
 
     def setCapacidad(self, bCapacidad):
         self.__capacidad = bCapacidad
+
+    def getCapacidad(self):
+        return self.__capacidad
+    
+    def getTicketsVendidos(self):
+        return self.__tickets_vendidos
+    
+    def getTicketsDisponibles(self):
+        return self.__tickets_disponibles
