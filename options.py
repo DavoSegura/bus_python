@@ -57,3 +57,14 @@ def DevolverBilletes(buses):
     else:
         status = 'Error'
     return status
+
+def CapacidadesBus(buses):
+
+    bus_seleccionado = SeleccionarBus(buses)
+
+    capacidad = buses[bus_seleccionado].getCapacidad()
+    tickets_disponibles = buses[bus_seleccionado].getTicketsDisponibles()
+    tickets_vendidos = len(buses[bus_seleccionado].getTicketsVendidos())
+    
+    status = (f'Total: {capacidad}\nLibre: {tickets_disponibles}\nVendido: {tickets_vendidos}')
+    return status
