@@ -1,27 +1,27 @@
 class Bus:
     def __init__(self, bCapacidad, destino):
         self.setCapacidad(bCapacidad)
-        self.__tickets_vendidos = []
-        self.__tickets_disponibles = bCapacidad
+        self.__billetes_vendidos = []
+        self.__billetes_disponibles = bCapacidad
         self.__destino = destino
 
     def getDestino(self):
         return self.__destino
 
-    def setTicketsVendidos(self, isCompra, billete):
+    def setBilletesVendidos(self, isCompra, billete):
         if isCompra == True:
-            self.__tickets_vendidos.append(billete)
+            self.__billetes_vendidos.append(billete)
         else:
-            if billete in self.__tickets_vendidos:
-                self.__tickets_vendidos.remove(billete)
+            if billete in self.__billetes_vendidos:
+                self.__billetes_vendidos.remove(billete)
             else:
                 print("Error: Billete no encontrado")
 
-    def setTicketsDisponibles(self, isCompra):
+    def setBilletesDisponibles(self, isCompra):
         if isCompra:
-            self.__tickets_disponibles -= 1
+            self.__billetes_disponibles -= 1
         else:
-            self.__tickets_disponibles += 1
+            self.__billetes_disponibles += 1
 
     def setCapacidad(self, bCapacidad):
         self.__capacidad = bCapacidad
@@ -29,8 +29,8 @@ class Bus:
     def getCapacidad(self):
         return self.__capacidad
     
-    def getTicketsVendidos(self):
-        return self.__tickets_vendidos
+    def getBilletesVendidos(self):
+        return self.__billetes_vendidos
     
-    def getTicketsDisponibles(self):
-        return self.__tickets_disponibles
+    def getBilletesDisponibles(self):
+        return self.__billetes_disponibles

@@ -24,12 +24,12 @@ def ComprarBilletes(buses):
     bus_seleccionado = SeleccionarBus(buses)
 
     status = ''
-    tickets_disponibles = buses[bus_seleccionado].getTicketsDisponibles()
+    billetes_disponibles = buses[bus_seleccionado].getBilletesDisponibles()
 
-    if tickets_disponibles > 0:
+    if billetes_disponibles > 0:
         billete = Billete(cliente)
-        buses[bus_seleccionado].setTicketsVendidos(True, billete)
-        buses[bus_seleccionado].setTicketsDisponibles(True)
+        buses[bus_seleccionado].setBilletesVendidos(True, billete)
+        buses[bus_seleccionado].setBilletesDisponibles(True)
         status = f'Se ha vendido su billete'
     else:
         status = f'Error'
@@ -45,13 +45,13 @@ def DevolverBilletes(buses):
 
 
     bus_seleccionado = SeleccionarBus(buses)
-    tickets_vendidos = buses[bus_seleccionado].getTicketsVendidos()
+    billetes_vendidos = buses[bus_seleccionado].getBilletesVendidos()
 
-    for billete in tickets_vendidos:
+    for billete in billetes_vendidos:
         cliente = billete.getCliente()
         if cliente.getNombre() == nombre and cliente.getApellido() == apellido:
-            buses[bus_seleccionado].setTicketsVendidos(False, billete)
-            buses[bus_seleccionado].setTicketsDisponibles(False)
+            buses[bus_seleccionado].setBilletesVendidos(False, billete)
+            buses[bus_seleccionado].setBilletesDisponibles(False)
             status = f'Se devuelto tu billete'
             break
     else:
@@ -63,8 +63,8 @@ def CapacidadesBus(buses):
     bus_seleccionado = SeleccionarBus(buses)
 
     capacidad = buses[bus_seleccionado].getCapacidad()
-    tickets_disponibles = buses[bus_seleccionado].getTicketsDisponibles()
-    tickets_vendidos = len(buses[bus_seleccionado].getTicketsVendidos())
+    billetes_disponibles = buses[bus_seleccionado].getBilletesDisponibles()
+    billetes_vendidos = len(buses[bus_seleccionado].getBilletesVendidos())
     
-    status = (f'Total: {capacidad}\nLibre: {tickets_disponibles}\nVendido: {tickets_vendidos}')
+    status = (f'Total: {capacidad}\nLibre: {billetes_disponibles}\nVendido: {billetes_vendidos}')
     return status
