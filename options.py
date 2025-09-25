@@ -2,6 +2,8 @@ from cliente import Cliente
 from billete import Billete
 from bus import Bus
 
+capacidad_maxima_bus = 60
+
 def CrearBus(buses):
     isCapacidadCorrecta = False
     while isCapacidadCorrecta == False:
@@ -10,7 +12,7 @@ def CrearBus(buses):
         if capacidad_bus.isnumeric():
             capacidad_bus = int(capacidad_bus)
 
-            if capacidad_bus > 0:
+            if 0 < capacidad_bus <= capacidad_maxima_bus:
                 bus_temp = Bus(capacidad_bus, input("Destino: "))
                 buses.append(bus_temp)
                 isCapacidadCorrecta = True
