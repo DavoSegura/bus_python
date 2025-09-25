@@ -9,8 +9,19 @@ def SeleccionarBus(buses):
         print(f"{contador_buses}. {bus.getDestino()}")
         contador_buses += 1
 
-    bus_seleccionado = int(input())
+    isInputcorrecto = False
+    while isInputcorrecto == False:
+        bus_seleccionado = input()
 
+        if bus_seleccionado.isnumeric():
+            bus_seleccionado = int(bus_seleccionado)
+            if 0 <= bus_seleccionado <   len(buses):
+                isInputcorrecto = True
+            else:
+                print("Introduce un número correcto")
+        else:
+            print("Introduce un número")
+        
     return bus_seleccionado
 
 def ComprarBilletes(buses):
@@ -32,7 +43,7 @@ def ComprarBilletes(buses):
         buses[bus_seleccionado].setBilletesDisponibles(True)
         status = f'Se ha vendido su billete'
     else:
-        status = f'Error'
+        status = f'Error: La compra no ha sido realizada'
     return status
 
 def DevolverBilletes(buses):
@@ -55,7 +66,7 @@ def DevolverBilletes(buses):
             status = f'Se devuelto tu billete'
             break
     else:
-        status = 'Error'
+        status = 'Error: No se ha podio devolver su billete'
     return status
 
 def CapacidadesBus(buses):
