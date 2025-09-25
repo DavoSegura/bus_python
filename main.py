@@ -1,10 +1,9 @@
 # from options import 
 from bus import Bus
-from options import ComprarBilletes, DevolverBilletes, CapacidadesBus
+from options import CrearBus, ComprarBilletes, DevolverBilletes, CapacidadesBus
 
 buses = []
-bus0 = Bus(int(input("Capacidad del bus: ")), input("Destino: "))
-buses.append(bus0)
+CrearBus(buses)
 
 run_app = True
 while run_app == True:
@@ -20,8 +19,7 @@ while run_app == True:
             
             print(CapacidadesBus(buses))
         elif option == '4':
-            bus_temp = Bus(int(input("Capacidad del bus: ")), input("Destino: "))
-            buses.append(bus_temp)
+            CrearBus(buses)
 
         elif option == '0':
             run_app = False

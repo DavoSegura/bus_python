@@ -1,5 +1,23 @@
 from cliente import Cliente
 from billete import Billete
+from bus import Bus
+
+def CrearBus(buses):
+    isCapacidadCorrecta = False
+    while isCapacidadCorrecta == False:
+        capacidad_bus = input("Capacidad del bus: ")
+
+        if capacidad_bus.isnumeric():
+            capacidad_bus = int(capacidad_bus)
+
+            if capacidad_bus > 0:
+                bus_temp = Bus(capacidad_bus, input("Destino: "))
+                buses.append(bus_temp)
+                isCapacidadCorrecta = True
+            else:
+                print("Introduce una capacidad válida")
+        else:
+            print("Introduce un número")
 
 def SeleccionarBus(buses):
     print("Selecciona el bus:")
