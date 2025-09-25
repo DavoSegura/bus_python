@@ -13,9 +13,9 @@ while isSesionIniciada == False:
     print("1.- Iniciar sesión\n2.- Registrarse\n")
     seleccion_menu_login = input()
     if seleccion_menu_login == '1':
-        run_app = IniciarSesion(usuarios)
-        print("Inicio de sesión correcto\n")
-        isSesionIniciada = True
+        if IniciarSesion(usuarios) == True:
+            run_app = True 
+            isSesionIniciada = True
     elif seleccion_menu_login == '2':
         usuarios.append(Registro())
         print("Su usuario ha sido creado. Inicie sesión.\n")
