@@ -7,9 +7,9 @@ CrearBus(buses)
 
 run_app = True
 while run_app == True:
-        menu = '\n1.- Venta de billetes.\n2.- Devolución de billetes.\n3.- Estado de la venta.\n4.- Añadir bus\n0.- Salir.'
+        menu = '\n1.- Venta de billetes.\n2.- Devolución de billetes.\n3.- Estado de la venta.\n4.- Añadir bus\n0.- Salir.\n'
         print(menu)
-        option = input()
+        option = input("Selecciona un número: ")
         if option == '1':
             print(ComprarBilletes(buses))
         elif option == '2':

@@ -20,11 +20,11 @@ def CrearBus(buses):
             print("Introduce un número")
 
 def SeleccionarBus(buses):
-    print("Selecciona el bus:")
+    print("\nSelecciona el bus:")
     
     contador_buses = 0
     for bus in buses:
-        print(f"{contador_buses}. {bus.getDestino()}")
+        print(f" {contador_buses}. {bus.getDestino()}")
         contador_buses += 1
 
     isInputcorrecto = False
@@ -61,7 +61,7 @@ def ComprarBilletes(buses):
         buses[bus_seleccionado].setBilletesDisponibles(True)
         status = f'Se ha vendido su billete'
     else:
-        status = f'Error: La compra no ha sido realizada'
+        status = f'Error: No hay billetes disponibles'
     return status
 
 def DevolverBilletes(buses):
